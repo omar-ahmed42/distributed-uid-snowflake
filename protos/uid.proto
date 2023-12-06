@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+
+service UID {
+    rpc generateUid(Empty) returns (google.protobuf.Int64Value);
+}
+
+message Empty {}
