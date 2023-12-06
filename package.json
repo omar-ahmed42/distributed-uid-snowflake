@@ -18,5 +18,10 @@
   "homepage": "https://github.com/omar-ahmed42/distributed-uid-snowflake#readme",
   "devDependencies": {
     "@types/node": "^20.1.7"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.9.12",
+    "@grpc/proto-loader": "^0.7.10",
+    "dotenv": "^16.3.1"
   }
 }
