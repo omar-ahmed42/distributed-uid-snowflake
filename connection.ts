@@ -16,14 +16,14 @@ const options: protoLoader.Options = {
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, options);
 
 const protoDescriptor = grpc.loadPackageDefinition(packageDefinition);
-const generator: any = protoDescriptor.UID;
+const generatorPackage: any = protoDescriptor.generator;
 
 const server = new grpc.Server();
 
-server.addService(generator.service, {
+server.addService(generatorPackage.UID.service, {
   generateUid: (call: any, callback: any) => {
     const uid = uidGenerator.generate();
-    callback(null, { value: uid.getId() });
+    callback(null, { value: uid.getId().toString() });
   },
 });
 
